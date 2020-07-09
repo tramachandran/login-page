@@ -25,21 +25,29 @@ export class LoginComponent {
   loginUser(): void {
     this._loginService.validateUser().subscribe(
       (res) => {
-        this.validateUserDetails(res.data);
+        this.validateUserDetails(res);
       },
       (err) => {
+        this.loginMsg = '';
         this.errorMsg = 'Error occured on server';
       })
   }
 
-  validateUserDetails(usersList: UserModel[]) {    
+  validateUserDetails(usersList: UserModel[]): void {
     const matchedUser = usersList.find((user) => {
       return user.email === this.userModel.email
     });
     if (matchedUser && matchedUser.password === this.userModel.password) {
       this.loginMsg = "Login is successful....";
+      this.errorMsg = '';
     } else {
-      this.errorMsg = 'Invalid credentails';
+      this.errorMsg = 'Invalid credentials';
+      this.loginMsg = '';
     }
+  }
+
+  clearMsgs(): void {
+    this.loginMsg = '';
+    this.errorMsg = '';
   }
 }

@@ -23,15 +23,15 @@
                     <small class="text-danger" *ngIf="password.touched && password.invalid">Password is required</small>
                 </div>
             </div>
-            <div class="text-success" *ngIf="loginMsg">
+            <div class="text text-success" *ngIf="loginform.form.valid && loginMsg">
                 {{loginMsg}}
             </div>
-            <div class="text-danger" *ngIf="errorMsg">
+            <div class="text text-danger" *ngIf="loginform.form.valid && errorMsg">
                 {{errorMsg}}
             </div>
             <button type="button" class="btn btn-link">Forgot Password</button>
             <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-success">Login</button>
-            <button type="reset" class="btn btn-primary">Reset</button>
+            <button type="reset" (click)="clearMsgs()" class="btn btn-primary">Reset</button>
         </form>
     </div>
 </div>

@@ -28,3 +28,7 @@ div.logo img {
 .form-control.is-invalid {
     border-color: #dc3545;
 }
+
+.text {
+    font-weight: bold;
+}
