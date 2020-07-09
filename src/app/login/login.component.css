@@ -1,0 +1,35 @@
+div.login-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.form {
+    font-size: 1.8rem;
+}
+
+div.logo img {
+    height: 20vh;
+    width: 15vw;
+    margin: 2vh 2vw;
+}
+
+.btn {
+    margin: 0.25rem;
+}
+
+.btn:active {
+    outline: none;
+    border: none;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+@media screen and (max-width: 800px) { 
+    div.logo img {
+        width: 20vw;
+    }
+}
