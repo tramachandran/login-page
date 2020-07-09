@@ -17,6 +17,7 @@ div.logo img {
 
 .btn {
     margin: 0.25rem;
+    font-weight: bold;
 }
 
 .btn:active {
@@ -26,10 +27,4 @@ div.logo img {
 
 .form-control.is-invalid {
     border-color: #dc3545;
-}
-
-@media screen and (max-width: 800px) { 
-    div.logo img {
-        width: 20vw;
-    }
 }

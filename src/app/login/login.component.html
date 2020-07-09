@@ -3,7 +3,7 @@
         <img src="./assets/img/user-login.png" />
     </div>
     <div class="form">
-        <form #loginform="ngForm" no-validate>
+        <form #loginform="ngForm" no-validate (submit)="loginUser()">
             <div class="form-group">
                 <label for="email">
                     Email:
@@ -22,6 +22,12 @@
                 <div *ngIf="password.errors">
                     <small class="text-danger" *ngIf="password.touched && password.invalid">Password is required</small>
                 </div>
+            </div>
+            <div class="text-success" *ngIf="loginMsg">
+                {{loginMsg}}
+            </div>
+            <div class="text-danger" *ngIf="errorMsg">
+                {{errorMsg}}
             </div>
             <button type="button" class="btn btn-link">Forgot Password</button>
             <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-success">Login</button>

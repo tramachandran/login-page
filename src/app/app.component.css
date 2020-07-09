@@ -16,6 +16,7 @@ div.header {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: blueviolet
 }
 
 div.body {
