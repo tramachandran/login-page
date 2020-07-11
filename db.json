@@ -2,11 +2,15 @@
     "users":[
        {
           "email":"ram@test.com",
-          "password":"test123"
+          "password":"Test@12345"
        },
        {
           "email":"chandran@test.com",
-          "password":"test123"
+          "password":"Test@12345"
+       },
+       {
+          "email":"chandran",
+          "password":"Test@12345"
        }
     ]
  }

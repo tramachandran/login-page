@@ -18,7 +18,7 @@ export class LoginComponent {
     email: '',
     password: ''
   };
-
+  showPwd = false;
   loginMsg: string = '';
   errorMsg: string = '';
 
