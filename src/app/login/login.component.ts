@@ -21,16 +21,21 @@ export class LoginComponent {
   showPwd = false;
   loginMsg: string = '';
   errorMsg: string = '';
-
+  userCaptcha: string = '';
+  systemCaptcha: string = Math.random().toString(36).slice(3);
   loginUser(): void {
-    this._loginService.validateUser().subscribe(
-      (res) => {
-        this.validateUserDetails(res);
-      },
-      (err) => {
-        this.loginMsg = '';
-        this.errorMsg = 'Error occured on server';
-      })
+    if (this.userCaptcha && this.userCaptcha === this.systemCaptcha) {
+      this._loginService.validateUser().subscribe(
+        (res) => {
+          this.validateUserDetails(res);
+        },
+        (err) => {
+          this.loginMsg = '';
+          this.errorMsg = 'Error occured on server';
+        })
+    } else {
+      this.errorMsg = 'Captcha not matched';
+    }    
   }
 
   validateUserDetails(usersList: UserModel[]): void {
